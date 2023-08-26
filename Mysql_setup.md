@@ -7,6 +7,7 @@
 6. mysql -u root -p   ---> change the root user’s authentication method back to the default, auth_socket.To authenticate as the root MySQL user using a password
 7. ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;     --->  the default authentication method
 8. CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password'; ---> create new user
-9. GRANT PRIVILEGE ON database.table TO 'username'@'host';  ---> granting user privileges 
+9. SELECT user, host, plugin FROM mysql.user WHERE user = 'root' AND host = 'localhost';   ---> to know user access
+10. GRANT PRIVILEGE ON database.table TO 'username'@'host';  ---> granting user privileges 
 
 src: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
