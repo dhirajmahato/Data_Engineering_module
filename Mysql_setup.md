@@ -11,3 +11,5 @@
 10. GRANT PRIVILEGE ON database.table TO 'username'@'host';  ---> granting user privileges 
 
 src: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+troubleshooting
+https://www.databasestar.com/access-denied-for-user-root-at-localhost/
