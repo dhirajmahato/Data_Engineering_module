@@ -26,7 +26,7 @@ Start Kafka-server:
 Duplicate the session & enter in a new console --
 ```
 export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
-cd kafka_2.12-3.3.1
+cd kafka_2.13-3.5.0
 bin/kafka-server-start.sh config/server.properties
 ```
 It is pointing to private server , change server.properties so that it can run in public IP 
@@ -39,7 +39,7 @@ Create the topic:
 -----------------------------
 Duplicate the session & enter in a new console --
 ```
-cd kafka_2.12-3.3.1
+cd kafka_2.13-3.5.0
 bin/kafka-topics.sh --create --topic demo_test --bootstrap-server <Public IP>:9092 --replication-factor 1 --partitions 1
 ```
 Start Producer:
@@ -51,6 +51,6 @@ Start Consumer:
 -------------------------
 Duplicate the session & enter in a new console --
 ```
-cd kafka_2.12-3.3.1
+cd kafka_2.13-3.5.0
 bin/kafka-console-consumer.sh --topic demo_test --bootstrap-server <Public IP>:9092
 ```
