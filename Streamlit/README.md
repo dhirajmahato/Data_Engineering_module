@@ -9,4 +9,5 @@ To kill the process in your next ssh session
     ps aux | grep streamlit  # ps command to find process id
     kill PID
 ```
-    
+
+src : https://www.machinelearningnuggets.com/streamlit-tutorial/#how-to-run-streamlit-applications
