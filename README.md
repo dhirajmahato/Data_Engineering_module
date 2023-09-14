@@ -1,5 +1,13 @@
 # Data_Engineering_module
-ETL pipelines and other implementations
+Data Pipeline , ETL and other implementations
+
+### Concepts:
+
+## 1. Data Pipelines
+
+
+## 2. Data modelling
+
 
 ## Useful Links
 - https://dataengineering.wiki/Concepts/Data+Pipeline
