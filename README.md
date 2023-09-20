@@ -53,10 +53,10 @@ Data Pipeline , ETL and other implementations
             - In-Memory Database
             - Search-Engine Database
             - Timeseries Database
-    
-    
+
+**Storage Infra:**
 - **Data Warehouse**: A conventional data warehousing solution typically involves copying data from transactional data stores into a relational database with a schema that's optimized for querying and building multidimensional models.
-- 2. 
+- **Data Lake**:
 
 
 ## Useful Links
