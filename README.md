@@ -1,5 +1,9 @@
 # Data_Engineering_module
-Data Pipeline , ETL and other implementations
+Data Pipeline, ETL and other implementations
+
+Data Processing
+1. Online Transactions Processing
+2. Online Analytics Processing
 
 # Data Pipeline
 - describe a workflow consisting of one or more tasks that ingest, move, and transform raw data from one or more sources to a destination.
@@ -54,11 +58,15 @@ Data Pipeline , ETL and other implementations
             - Search-Engine Database
             - Timeseries Database
 
-**Storage Infra:**
-- **Data Warehouse**: A conventional data warehousing solution typically involves copying data from transactional data stores into a relational database with a schema that's optimized for querying and building multidimensional models.
-- **Data Lake**:
-
-
+**Data Architecture:**
+- **Data Warehouse**: A data warehouse is a *relational* database in which the data is **stored in a schema** that is optimized for data analytics rather than transactional workloads.
+  - fact and dimension table schema is called a star schema; though it's often extended into a snowflake schema by adding additional tables related to the dimension tables
+  - Data warehouses are made for complex queries on large datasets.
+- **Data Lake**: A data lake is a file store, usually on a distributed file system for high performance data access, to store all your structured and unstructured data at any scale
+  - often apply a **schema-on-read** approach to define tabular schemas on semi-structured data files at the point where the data is read for analysis, without applying constraints when it's stored.
+  - Technologies like Spark or Hadoop are often used to process queries on the stored files and return data
+- **Lake Database**: The raw data is stored as files in a data lake, and a relational storage layer abstracts the underlying files and expose them as tables, which can be queried using SQL.
+  - 
 ## Useful Links
 - https://dataengineering.wiki/Concepts/Data+Pipeline
 - https://datamike.hashnode.dev/data-platform-architecture-types
