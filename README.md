@@ -30,19 +30,31 @@ Data Pipeline , ETL and other implementations
         - Relational Databases:  Each table can have one or more columns with unique identifiers (primary key) that point to an id column in another table (foreign key) which forms the relationship between the two tables.
             - Easier to do complex queries
             - Supports atomic transactions
-            - Harder to scale (vertical scaling
+            - Harder to scale (vertical scaling)
         - Use cases: Customer Relationship Management, Enterprise resource planning, SaaA application, eCommerce and Web, Payment and booking system
-        - Tools: **RDMS** use SQL 
-    2. **Non-relational**
-        - Types
+        - Tools: **RDMS** use SQL
+    
+    1.1 **Dimensional Modeling**: dimensional modeling revolves around organizing data into two types of datasets: fact tables and dimension tables. Facts are usually comprised of numerical values that can be aggregated while dimensions hold descriptive attributes of entities/objects.
+        - A key tradeoff the dimensional model makes is it denormalizes data (increases data redundancy) in order to speed up queries.
+        - Within dimensional modeling there are a **few different schema design patterns: star schema (recommended in most cases), snowflake schema, and galaxy schema**.
+    1.2 **Data Vault Modeling**: most flexible modeling technique, adapting to changes and new datasets easily while storing all historical data by default.
+        - Hubs: Tables that contain a list of unique business keys (natural keys), surrogate keys, and metadata describing the data source for each hub item.
+        - Links: tables that associate hubs and satellites via the business key.
+        - satellites: tables that hold the descriptive data about the entities being modeled as well as start and end date columns to track historical changes.
+
+    2. **Non-relational**: storage model that is optimized for the specific type of data being stored. For example, data may be stored as a key/value pair, as JSON, or as a graph consisting of nodes and edges.
+          - Better at simpler queries
+          - Easier to scale (horizontal scaling).
+          - Flexible schema makes development faster. 
+        - Types of Databases
             - Key-Value Database
             - Document Database
             - Graph Database
             - In-Memory Database
             - Search-Engine Database
             - Timeseries Database
-  
-  **Database Schema**:
+    
+    
 - **Data Warehouse**: A conventional data warehousing solution typically involves copying data from transactional data stores into a relational database with a schema that's optimized for querying and building multidimensional models.
 - 2. 
 
