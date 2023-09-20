@@ -20,12 +20,18 @@ Data Pipeline , ETL and other implementations
 
 ## Key Components:
 - **[Databases](https://youtu.be/JZfeeyP-tCM)**:
+  - **Desired Properties** - ACID
+    1. A - Atomicity
+    2. C - Consistency
+    3. I - Isolation
+    4. D - Durability
   - **Data modeling**: mapping out an information system how multiple parts are connected, entity-relationship diagram, 2 main categories:
-    1. Relational modeling - using tables, columns, and rows to represent data.  A key component for relational modeling is normalization (reduces data redundancy). Great for *transactional/operational* workloads where data is constantly inserted, updated, or deleted. *Analytical* queries become slow at larger data scales.
+    1. **Relational modeling** - using tables, columns, and rows to represent data.  A key component for relational modeling is normalization (reduces data redundancy).  **Great for *transactional/operational* workloads where data is constantly inserted, updated, or deleted. *Analytical* queries become slow at larger data scales.**
         - Relational Databases:  Each table can have one or more columns with unique identifiers (primary key) that point to an id column in another table (foreign key) which forms the relationship between the two tables.
             - Easier to do complex queries
             - Supports atomic transactions
-            - Harder to scale (vertical scaling)
+            - Harder to scale (vertical scaling
+        - Use cases: Customer Relationship Management, Enterprise resource planning, SaaA application, eCommerce and Web, Payment and booking system
     2. **Non-relational**
   
   **Database Schema**:
