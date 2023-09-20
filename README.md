@@ -60,13 +60,17 @@ Data Processing
 
 **Data Architecture:**
 - **Data Warehouse**: A data warehouse is a *relational* database in which the data is **stored in a schema** that is optimized for data analytics rather than transactional workloads.
-  - fact and dimension table schema is called a star schema; though it's often extended into a snowflake schema by adding additional tables related to the dimension tables
+  - fact and dimension table schema is called a **star schema**; though it's often extended into a **snowflake schema** by adding additional tables related to the dimension tables
   - Data warehouses are made for complex queries on large datasets.
+
 - **Data Lake**: A data lake is a file store, usually on a distributed file system for high performance data access, to store all your structured and unstructured data at any scale
   - often apply a **schema-on-read** approach to define tabular schemas on semi-structured data files at the point where the data is read for analysis, without applying constraints when it's stored.
-  - Technologies like Spark or Hadoop are often used to process queries on the stored files and return data
-- **Lake Database**: The raw data is stored as files in a data lake, and a relational storage layer abstracts the underlying files and expose them as tables, which can be queried using SQL.
-  - 
+  - Technologies like Spark or Hadoop are often used to process queries on the stored files and return data.
+
+- **Lake Database**: The raw data is stored as files in a data lake, and a relational storage layer abstracts the underlying files and expose them as tables, which can be queried using SQL
+  - **Databricks** combines data warehouses & data lakes into a lakehouse architecture. 
+
+
 ## Useful Links
 - https://dataengineering.wiki/Concepts/Data+Pipeline
 - https://datamike.hashnode.dev/data-platform-architecture-types
