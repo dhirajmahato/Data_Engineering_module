@@ -41,6 +41,7 @@ Data Processing
     1.1 **Dimensional Modeling**: dimensional modeling revolves around organizing data into two types of datasets: fact tables and dimension tables. Facts are usually comprised of numerical values that can be aggregated while dimensions hold descriptive attributes of entities/objects.
         - A key tradeoff the dimensional model makes is it denormalizes data (increases data redundancy) in order to speed up queries.
         - Within dimensional modeling there are a **few different schema design patterns: star schema (recommended in most cases), snowflake schema, and galaxy schema**.
+    
     1.2 **Data Vault Modeling**: most flexible modeling technique, adapting to changes and new datasets easily while storing all historical data by default.
         - Hubs: Tables that contain a list of unique business keys (natural keys), surrogate keys, and metadata describing the data source for each hub item.
         - Links: tables that associate hubs and satellites via the business key.
