@@ -38,21 +38,21 @@ we can run our image with the following command:
 ![image](https://github.com/dhirajmahato/Data_Engineering_module/assets/33785298/3af9a3a0-1a9f-4e6d-81ea-f682f195486f)
 
 ### Commands
-Comments:  *start with #*
-FROM:      *first command in the Dockerfile*
-CMD:       *multiple CMD’s but the last one is executed*
-ENTRYPOINT
-WORKDIR
-ENV
-COPY
-LABEL
-RUN
-ADD
-.dockerignore
-ARG
-EXPOSE
-USER
-VOLUME
+- Comments:  *start with #*
+- FROM:      *first command in the Dockerfile*
+- CMD:       *multiple CMD’s but the last one is executed*
+- ENTRYPOINT
+- WORKDIR
+- ENV
+- COPY
+- LABEL
+- RUN
+- ADD
+- .dockerignore
+- ARG
+- EXPOSE
+- USER
+- VOLUME
 
 
 
