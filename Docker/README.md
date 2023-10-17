@@ -16,6 +16,15 @@ https://docs.docker.com/engine/install/ubuntu/
 
 ### Steps
 A container is a running instance of our image.
+
+1. Navigate to the folder where you have cloned git repository ( where the Dockerfile is present ).
+2. Build the Docker Image (don't forget the dot!! 😄 which indicates the build context. The build context is the current directory (where your Dockerfile is located) ): 
+```
+  docker build -f Dockerfile -t app:latest .
+```
+- *-f Dockerfile* specifies the path to the Dockerfile
+-  *-t app:latest* This part of the command specifies the name and tag for the Docker image
+3. Run the docker:
 we can run our image with the following command:
 
 ```
