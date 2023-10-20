@@ -63,3 +63,38 @@ You can trigger your DAG from the web UI or by using the command line. To run it
   airflow dags trigger hello_airflow
 ```
 ***
+## Web Authentication
+By default, Airflow requires users to specify a password prior to login.
+
+Since Airflow 2.0, the default UI is the Flask App Builder RBAC. A webserver_config.py configuration file is automatically generated and can be used to configure the Airflow to support authentication methods like OAuth, OpenID, LDAP, REMOTE_USER.
+
+src: https://airflow.apache.org/docs/apache-airflow/stable/security/webserver.html#disable-deployment-exposure-warning
+
+To deactivate the authentication and allow users to be identified as Anonymous, the following entry in $AIRFLOW_HOME/webserver_config.py needs to be set with the desired role that the Anonymous user will have by default:
+
+`AUTH_ROLE_PUBLIC = 'Admin'`
+
+If you are using the airflow standalone command then you will get the user and password in the terminal itself
+
+## Creating Users
+There is no default username and password created if you are just using python wheel.
+
+To check list of users
+```
+  airflow users list
+```
+
+You can use the following CLI commands to create an account:
+```
+  airflow users create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+```
+
+COMMAND
+- add-role   Add role to a user
+- create     Create a user
+- delete     Delete a user
+- export     Export all users
+- import     Import users
+- list       List users
+- remove-role     Remove role from a user
+
