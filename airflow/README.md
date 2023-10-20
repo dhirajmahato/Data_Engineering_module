@@ -90,11 +90,11 @@ You can use the following CLI commands to create an account:
 ```
 
 COMMAND
-- add-role   Add role to a user
-- create     Create a user
-- delete     Delete a user
-- export     Export all users
-- import     Import users
-- list       List users
-- remove-role     Remove role from a user
+- add-role  : Add role to a user
+- create    : Create a user
+- delete    : Delete a user
+- export    : Export all users
+- import    : Import users
+- list      : List users
+- remove-role :     Remove role from a user
 
