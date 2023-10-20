@@ -9,11 +9,6 @@ Apache Airflow is an open-source platform for programmatically authoring, schedu
 5. Web UI
 
 #### Creating data pipeline tasks
-A pipeline in Airflow is defined as a task. A task is structured as a Directed Acyclic Graph (DAG) where:
-
-- Directed means an ordered task that happens in a pre-defined sequence
-- Acyclic means a terminating task without the possibility of one running into an eternal loop
-- Graph means a structure that can establish a many-to-many tasks relationship
 
 6. DAGs
 7. Trigger DAG
@@ -71,6 +66,12 @@ By default, the Airflow web server will run on http://localhost:8080.
 
 ### 6. First DAG (Directed Acyclic Graph):
 
+A pipeline in Airflow is defined as a task. A task is structured as a Directed Acyclic Graph (DAG) where:
+
+- Directed means an ordered task that happens in a pre-defined sequence
+- Acyclic means a terminating task without the possibility of one running into an eternal loop
+- Graph means a structure that can establish a many-to-many tasks relationship
+
 A DAG is the core concept in Airflow. It defines the workflow you want to automate. You can create a Python script for your DAG, typically stored in the dags/ directory within your $AIRFLOW_HOME.
 
 Here's a simple example of a DAG that prints "Hello, Airflow!":
@@ -108,8 +109,8 @@ You can trigger your DAG from the web UI or by using the command line. To run it
 Testing a DAG 
 - `airflow dags test <DAG_ID> <EXECUTION_TIME>` will perform a single test on your task. No changes will occur on the database.
 
-- `airflow dags delete <DAG_ID>` will delete all the data in DB related to the task.
-- `airflow dags show <DAG_ID>` will show the structure and dependencies of a DAG.
+  - `airflow dags delete <DAG_ID>` will delete all the data in DB related to the task.
+  - `airflow dags show <DAG_ID>` will show the structure and dependencies of a DAG.
 
 Showing a DAG structure and dependencies (image from airflow.org)
 - `airflow dags show <DAG_ID> --save <FILE_NAME.png>` will save the above image to a local file. There are many extensions you can use, including png, jpg , and pdf
@@ -171,3 +172,4 @@ COMMAND
 - `list`      : List users
 - `remove-role` :     Remove role from a user
 
+***
