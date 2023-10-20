@@ -1,11 +1,47 @@
 ## Airflow
 Apache Airflow is an open-source platform for programmatically authoring, scheduling, and monitoring workflows. It's commonly used for orchestrating complex data workflows, but it can be used for a wide range of automation and scheduling tasks. 
 
-use a virtual environment to manage your Python dependencies.
+#### Setups:
+1. Installing Airflow
+2. Initializing Database
+3. configuration
+4. airflow server and schedular
+5. Web UI
+
+#### Creating data pipeline tasks
+A pipeline in Airflow is defined as a task. A task is structured as a Directed Acyclic Graph (DAG) where:
+
+- Directed means an ordered task that happens in a pre-defined sequence
+- Acyclic means a terminating task without the possibility of one running into an eternal loop
+- Graph means a structure that can establish a many-to-many tasks relationship
+
+6. DAGs
+7. Trigger DAG
+8. Tasks
+
+#### Testing and monitoring
+##### Step 1: Testing 
+Now that we have a complete pipeline, let us check the Python script validity.
+```
+  python airflow_tutorial.py
+```
+##### Step 2: Monitoring
+If you are confident of your pipeline, we can deploy and monitor it! Run:
+```
+airflow scheduler
+```
+If you re-open your web server UI, you will notice your pipeline running!
+
+Note: use a virtual environment to manage your Python dependencies.
 ### 1. Installation
 ```
   pip install apache-airflow
 ```
+By default, your entire airflow directory is located at ~/airflow . But if you choose to change the default directory, simply runs this command:
+```
+  export AIRFLOW_HOME="<YOUR_AIRFLOW_DIRECTORY>"
+```
+
 ### 2. Initialize the Airflow Database:
 Airflow uses a database to store metadata and state information about your workflows. 
 ```
@@ -29,7 +65,7 @@ The web server is the main user interface for Airflow, and the scheduler is resp
 ```
   airflow standalone
 ```
-Login with username: admin  password: Ktx5QHyaacQhaeuK
+Login with username: admin ; password: Ktx5QHyaacQhaeuK
 ### 5. Access the Web UI:
 By default, the Airflow web server will run on http://localhost:8080.
 
