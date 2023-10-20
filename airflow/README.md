@@ -66,9 +66,17 @@ You can trigger your DAG from the web UI or by using the command line. To run it
 ## Web Authentication
 By default, Airflow requires users to specify a password prior to login.
 
-Since Airflow 2.0, the default UI is the Flask App Builder RBAC. A webserver_config.py configuration file is automatically generated and can be used to configure the Airflow to support authentication methods like OAuth, OpenID, LDAP, REMOTE_USER.
+Since Airflow 2.0, the default UI is the Flask App Builder RBAC (Role-Based Access Control). 
+
+A webserver_config.py configuration file is automatically generated and can be used to configure the Airflow to support authentication methods like OAuth, OpenID, LDAP, REMOTE_USER.
 
 src: https://airflow.apache.org/docs/apache-airflow/stable/security/webserver.html#disable-deployment-exposure-warning
+
+  1. RBAC: It assigns users to roles that determine their access permissions within the Airflow web UI.
+      - Roles: Common roles include Admin, User, Viewer, and Public.
+  2. LDAP (Lightweight Directory Access Protocol) Authentication:
+  3. OAuth (Open Authorization) Authentication: It allows users to log in using their existing credentials from a trusted third-party identity provider (e.g., Google, Microsoft, or GitHub).
+
 
 To deactivate the authentication and allow users to be identified as Anonymous, the following entry in $AIRFLOW_HOME/webserver_config.py needs to be set with the desired role that the Anonymous user will have by default:
 
@@ -82,6 +90,9 @@ There is no default username and password created if you are just using python w
 To check list of users
 ```
   airflow users list
+  airflow users show admin
+  airflow users delete admin
+  airflow users reset-password admin
 ```
 
 You can use the following CLI commands to create an account:
