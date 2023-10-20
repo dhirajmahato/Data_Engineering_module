@@ -19,10 +19,47 @@ The web server is the main user interface for Airflow, and the scheduler is resp
 ```
   airflow webserver
   airflow scheduler
-
 ```
 
 ```
   airflow standalone
 ```
 Login with username: admin  password: Ktx5QHyaacQhaeuK
+### 5. Access the Web UI:
+By default, the Airflow web server will run on http://localhost:8080.
+
+### 6. First DAG (Directed Acyclic Graph):
+
+A DAG is the core concept in Airflow. It defines the workflow you want to automate. You can create a Python script for your DAG, typically stored in the dags/ directory within your $AIRFLOW_HOME.
+
+Here's a simple example of a DAG that prints "Hello, Airflow!":
+```
+  from airflow import DAG
+  from airflow.operators.python import PythonOperator
+  from datetime import datetime
+  
+  def say_hello():
+      print("Hello, Airflow!")
+  
+  default_args = {
+      'owner': 'your_name',
+      'start_date': datetime(2023, 10, 20)
+  }
+  
+  dag = DAG('hello_airflow', default_args=default_args, schedule_interval=None)
+  
+  task = PythonOperator(
+      task_id='print_hello',
+      python_callable=say_hello,
+      dag=dag
+  )
+```
+save this script in the dags/ directory.
+
+### 7. Trigger Your DAG:
+
+You can trigger your DAG from the web UI or by using the command line. To run it from the command line, use the airflow dags trigger command:
+```
+  airflow dags trigger hello_airflow
+```
+***
