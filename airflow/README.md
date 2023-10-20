@@ -11,6 +11,11 @@ Airflow uses a database to store metadata and state information about your workf
 ```
   airflow db init
 ```
+- `airflow db check` will check the status of your database (eg. connected, not connected, etc).
+- `airflow db upgrade` will upgrade the information and metadata of your database. Perform upgrade regularly to prevent any dependency issue.
+- `airflow db shell` will give you access to the database itself. Please proceed with care.
+
+
 ### 3. Airflow Configuration:
 configuration file for Airflow is located in the airflow.cfg file. You can find it in the $AIRFLOW_HOME directory. By default, $AIRFLOW_HOME is ~/airflow. You can configure various settings in this file, like the database connection and executor type.
 
@@ -62,8 +67,27 @@ You can trigger your DAG from the web UI or by using the command line. To run it
 ```
   airflow dags trigger hello_airflow
 ```
-***
-## Web Authentication
+- `airflow dags list` will list our a list of DAGs that you currently have running.
+
+Testing a DAG 
+- `airflow dags test <DAG_ID> <EXECUTION_TIME>` will perform a single test on your task. No changes will occur on the database.
+
+- `airflow dags delete <DAG_ID>` will delete all the data in DB related to the task.
+- `airflow dags show <DAG_ID>` will show the structure and dependencies of a DAG.
+
+Showing a DAG structure and dependencies (image from airflow.org)
+- `airflow dags show <DAG_ID> --save <FILE_NAME.png>` will save the above image to a local file. There are many extensions you can use, including png, jpg , and pdf
+
+
+### 8. Tasks
+
+- `airflow tasks list <DAG_ID>` will list down all tasks related to a given DAG.
+  
+List of tasks in a DAG (image by author)
+- `airflow tasks test <DAG_ID> <TASK_ID> <EXECUTION_TIME>` will perform test on a specific task in a DAG.
+
+
+###  Web Authentication on Web UI
 By default, Airflow requires users to specify a password prior to login.
 
 Since Airflow 2.0, the default UI is the Flask App Builder RBAC (Role-Based Access Control). 
@@ -84,7 +108,7 @@ To deactivate the authentication and allow users to be identified as Anonymous, 
 
 If you are using the airflow standalone command then you will get the user and password in the terminal itself
 
-## Creating Users
+#### Creating Users
 There is no default username and password created if you are just using python wheel.
 
 To check list of users
@@ -98,6 +122,8 @@ To check list of users
 You can use the following CLI commands to create an account:
 ```
   airflow users create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+  or
+  airflow users create -u <username> -p <password> -r <role> -e <email>
 ```
 
 COMMAND
